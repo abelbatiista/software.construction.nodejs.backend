@@ -9,7 +9,7 @@ const getAll = async (req, res) => {
       data: [...items],
     });
   } catch (error) {
-    res.status(500).json({ ok: false, message: 'error', error: 'Error getting items' });
+    res.status(500).json({ ok: false, message: 'Error getting items', error });
   }
 };
 
@@ -25,46 +25,49 @@ const findById = async (req, res) => {
       data: { ...item },
     });
   } catch (error) {
-    res.status(500).json({ ok: false, message: 'error', error: 'Error finding item' });
+    res.status(500).json({ ok: false, message: 'Error finding item', error });
   }
 };
 
 const create = async (req, res) => {
   try {
     const result = await userService.create(req.body);
+    console.log({ result });
     res.status(201).json({
       ok: true,
       message: 'success!',
       data: {},
     });
   } catch (error) {
-    res.status(500).json({ ok: false, message: 'error', error: 'Error creating item' });
+    res.status(500).json({ ok: false, message: 'Error creating item', error });
   }
 };
 
 const update = async (req, res) => {
   try {
     const result = await userService.update(req.params.id, req.body);
+    console.log({ result });
     res.status(201).json({
       ok: true,
       message: 'success!',
       data: {},
     });
   } catch (error) {
-    res.status(500).json({ ok: false, message: 'error', error: 'Error updating item' });
+    res.status(500).json({ ok: false, message: 'Error updating item', error });
   }
 };
 
 const softDelete = async (req, res) => {
   try {
     const result = await userService.softDelete(req.params.id);
+    console.log({ result });
     res.status(200).json({
       ok: true,
       message: 'success!',
       data: {},
     });
   } catch (error) {
-    res.status(500).json({ ok: false, message: 'error', error: 'Error deleting item' });
+    res.status(500).json({ ok: false, message: 'Error deleting item', error });
   }
 };
 

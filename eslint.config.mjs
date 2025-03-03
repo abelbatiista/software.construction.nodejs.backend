@@ -25,7 +25,7 @@ export default [
       'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
       'curly': 'error',
       'eqeqeq': 'error',
-      'strict': ['error', 'global'],
+      'strict': 'off',
       'arrow-parens': ['error', 'always'],
     },
   },

@@ -9,7 +9,10 @@
     "lint": "eslint src --fix",
     "format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "standard-version"
+    "release": "standard-version",
+    "build": "webpack --config webpack.config.js",
+    "start:prod": "node dist/main.js",
+    "build:pkg": "pkg . --targets node20-linux,node20-macos,node20-win"
   },
   "husky": {
     "hooks": {
@@ -37,8 +40,12 @@
     "globals": "^16.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
+    "pkg": "^5.8.1",
     "prettier": "^3.5.2",
-    "standard-version": "^9.5.0"
+    "standard-version": "^9.5.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

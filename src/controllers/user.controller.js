@@ -72,11 +72,9 @@ const softDelete = async (req, res) => {
 };
 
 module.exports = {
-  userController: {
-    getAll,
-    findById,
-    create,
-    update,
-    softDelete,
-  },
+  getAll,
+  findById,
+  create,
+  update,
+  softDelete,
 };

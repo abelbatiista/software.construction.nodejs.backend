@@ -67,11 +67,9 @@ const softDelete = async (id) => {
 };
 
 module.exports = {
-  userService: {
-    getAll,
-    findById,
-    create,
-    update,
-    softDelete,
-  },
+  getAll,
+  findById,
+  create,
+  update,
+  softDelete,
 };

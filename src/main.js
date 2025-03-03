@@ -1,5 +1,5 @@
 const express = require('express');
-const { userRoutes } = require('./routes');
+const { userRoutes, gameRoutes, franchiseRoutes } = require('./routes');
 const { ENV } = require('./config');
 
 const app = express();
@@ -12,6 +12,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', userRoutes);
+app.use('/api/game', gameRoutes);
+app.use('/api/franchise', franchiseRoutes);
 
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);

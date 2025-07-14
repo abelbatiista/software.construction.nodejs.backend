@@ -1,16 +1,16 @@
-const mysql = require('mysql2');
+const mongoose = require('mongoose');
 const ENV = require('./env');
 
-const pool = mysql.createPool({
-  host: ENV.database.host,
-  user: ENV.database.user,
-  password: ENV.database.password,
-  database: ENV.database.name,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-});
+const initializeDB = async () => {
+  try {
+    await mongoose.connect(ENV.database.uri);
+    console.log('MongoDB Connected');
+  } catch (error) {
+    console.error('Error to connect MongoDB:', error);
+    process.exit(1);
+  }
+};
 
-const DB = pool.promise();
-
-module.exports = DB;
+module.exports = {
+  initializeDB,
+};

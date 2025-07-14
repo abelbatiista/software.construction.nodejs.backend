@@ -1,9 +1,9 @@
 const userRoutes = require('./user.routes');
-const gameRoutes = require('./game.routes');
-const franchiseRoutes = require('./franchise.routes');
+const authRoutes = require('./auth.routes');
+const creditCardRoutes = require('./credit-card.routes');
 
 module.exports = {
   userRoutes,
-  gameRoutes,
-  franchiseRoutes,
+  authRoutes,
+  creditCardRoutes,
 };

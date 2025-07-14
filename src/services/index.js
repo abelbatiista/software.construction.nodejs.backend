@@ -1,9 +1,9 @@
 const userService = require('./user.service');
-const gameService = require('./game.service');
-const franchiseService = require('./franchise.service');
+const authService = require('./auth.service');
+const creditCardService = require('./credit-card.service');
 
 module.exports = {
   userService,
-  gameService,
-  franchiseService,
+  authService,
+  creditCardService,
 };

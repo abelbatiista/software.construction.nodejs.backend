@@ -9,6 +9,10 @@ const ENV = {
   database: {
     uri: process.env.DATABASE_URI || '',
   },
+  google: {
+    email: process.env.GOOGLE_EMAIL || '',
+    pass: process.env.GOOGLE_PASS || '',
+  },
 };
 
 module.exports = ENV;

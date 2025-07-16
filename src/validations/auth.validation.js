@@ -14,7 +14,12 @@ const signUp = Joi.object({
   repeatPassword: Joi.string().required(),
 });
 
+const recoverPassword = Joi.object({
+  email: Joi.string().email().lowercase().required(),
+});
+
 module.exports = {
   signUp,
   signIn,
+  recoverPassword,
 };

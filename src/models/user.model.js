@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    causes: {
+      type: Array,
+      required: false,
+    },
     ...AuditableSchema,
   },
   { timestamps: true },

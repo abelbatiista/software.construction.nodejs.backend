@@ -1,21 +1,18 @@
 const mongoose = require('mongoose');
 const { AuditableSchema } = require('./schemas');
 
-const CreditCardSchema = new mongoose.Schema(
+const CategorySchema = new mongoose.Schema(
   {
-    fullName: {
+    code: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    name: {
       type: String,
       required: true,
     },
-    cardNumber: {
-      type: String,
-      required: true,
-    },
-    expirationDate: {
-      type: String,
-      required: true,
-    },
-    cvc: {
+    description: {
       type: String,
       required: true,
     },
@@ -24,4 +21,4 @@ const CreditCardSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-module.exports = mongoose.model('CreditCard', CreditCardSchema);
+module.exports = mongoose.model('Category', CategorySchema);
